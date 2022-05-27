@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Mamae_Vazeii</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <!-- xs= 0-767 pixels    sm = 768-991 pixels   md = 992-1199 pixels  lg = 1200 pixels and up -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #C4C4C4;">
+    <nav class="navbar navbar-expand-lg static-top navbar-dark" style="background-color: #677385;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="vazei.png" alt="..." height="40">
+            </a>
+            
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Usuário</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="http://127.0.0.1:5500/cadastro.html">Cadastre-se</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:5500/login.html">Login</a>
+                            <a class="dropdown-item" id="SAIRR" onclick="updateLoggedOut()" href=""></a>
+                        </div> 
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <p id="nameLogged" style="color:white; padding-left: 1px; padding-top:16px"></p>
+                    <p id="idLogged" style="color:white; padding-left: 1px; padding-top:16px"></p>
+                </form>
+            </div>
+    </nav>
+
+    <!-- Page Content -->
+    <!-- xs= 0-767 pixels    sm = 768-991 pixels   md = 992-1199 pixels  lg = 1200 pixels and up -->
+    <div class="container">
+
+        <div class="row linhaLogin">
+            <div class="col-sm-2"></div>
+
+            <div class="col-sm-8 login"
+                style="border-radius:8px;background-color: rgba(32, 25, 25, 0.695); padding-top: 20px; margin-top: 30px;">
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <label for="text" class="col-sm-2 col-form-label" style=" color: black;">
+                        <h5 style="color: rgb(255, 255, 255);">Nome</h5>
+                    </label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control-plaintext" id="nomeInput"
+                            style="margin-top: 5px; background-color:rgb(255, 255, 255);border-color: rgb(255, 255, 255); border-radius: 10px; margin-bottom: 10px;">
+                        <p id="nomeInputErr"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <label for="emailInput" class="col-sm-2 col-form-label">
+                        <h5 style="color: rgb(255, 255, 255);">Email</h5>
+                    </label>
+                    <p id="throwEmail"></p>
+                    <div class="col-sm-6 ">
+                        <input type="text" class="form-control" id="emailInput"
+                            style="margin-top: 5px;background-color:rgb(255, 255, 255);border-color: rgb(255, 255, 255); border-radius: 10px; margin-bottom:10px;">
+                        <p id="emailInputErr"></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <label for="loginInput" class="col-sm-2 col-form-label" style=" color: black;">
+                        <h5 style="color: rgb(170, 170, 170);">Login</h5>
+                    </label>
+                    <p id="throwLogin"></p>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control-plaintext" id="loginInput"
+                            style="margin-top: 5px; background-color:rgb(255, 255, 255);border-color: rgb(255, 255, 255); border-radius: 10px; margin-bottom: 10px;">
+                        <p id="loginInputErr"></p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <label for="inputPassword" class="col-sm-2 col-form-label">
+                        <h5 style="color: rgb(170, 170, 170);">Senha</h5>
+                    </label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="senhaInput"
+                            style="margin-top: 5px;background-color:rgb(255, 255, 255);border-color: rgb(255, 255, 255); border-radius: 10px; margin-bottom:10px;">
+                        <p id="senhaInputErr"></p>
+
+                    </div>
+                </div>
+                
+                
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <label for="cidadeInput" class="col-sm-2 col-form-label" style=" color: black;">
+                        <h5 style="color: rgb(255, 255, 255);">Cidade</h5>
+                    </label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control-plaintext" id="cidadeInput"
+                            style="margin-top: 5px; background-color:rgb(255, 255, 255);border-color: rgb(255, 255, 255); border-radius: 10px; margin-bottom: 10px;">
+                        <p id="cidadeInputErr"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <label for="dataDeNascimentoInput" class="col-sm-2 col-form-label"
+                        style=" color: black; display: inline;">
+                        <h5 style="color: rgb(255, 255, 255);">Data_de_nascimento</h5>
+                    </label>
+                    <div class="col-sm-3 col-lg-0"></div>
+                    <div class="col-sm-3">
+                        <input type="date" class="form-control-plaintext" id="dataDeNascimentoInput"
+                            style="margin-top: 5px; background-color:rgb(255, 255, 255);border-color: rgb(255, 255, 255); border-radius: 10px; margin-bottom: 10px;">
+                        <p id="dataInputErr"></p>
+                    </div>
+                </div>
+                <p id="fraseErroCadastro"
+                    style="font-style:success;text-align: center; color: rgba(255, 255, 255, 0.796);">
+                </p>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12"
+                        style="text-align: center; margin-bottom: 30px; margin-top:20px">
+                        <button onclick="criaUsuario()" class="btn btn-primary" id="buttonCadastrar"
+                            style="width: 25%;">Cadastrar</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="scripts.js"></script>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
