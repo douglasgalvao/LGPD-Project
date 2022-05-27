@@ -18,7 +18,7 @@
   <nav class="navbar navbar-expand-lg static-top navbar-dark" style="background-color: #677385;">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="vazei.png" alt="..." height="36">
+        <img src="https://thumbs.jusbr.com/filters:format(webp)/imgs.jusbr.com/publications/images/e0fdf63c8eb02000dafd55ec38db95c0" alt="..." height="36">
       </a>
 
       <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
@@ -27,14 +27,23 @@
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Usuário</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <a class="dropdown-item" href="http://127.0.0.1:5500/cadastro.html">Cadastre-se</a>
+              <a class="dropdown-item" href="http://127.0.0.1:5500/login.html">Login</a>
+              <a class="dropdown-item" id="SAIRr" onclick="updateLoggedOut()" href=""></a>
+            </div>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Menu<span class="sr-only">(current)</span></a>
+            <a class="nav-link" id="Menu" href="http://127.0.0.1:5500/main.html">Menu<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id = "Notícias" href="#">Notícias</a>
+            <a class="nav-link" id="Notícias" href="http://127.0.0.1:5500/noticias.html">Notícias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="Vídeos"href="#">Vídeos</a>
+            <a class="nav-link" id="Vídeos" href="http://127.0.0.1:5500/videos.html">Vídeos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="Quizzes" href="#">Quizzes</a>
@@ -42,15 +51,7 @@
           <li class="nav-item">
             <a class="nav-link" id="Contato" href="#">Contato</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">Usuário</a>
-            <div class="dropdown-menu" aria-labelledby="dropdownId">
-              <a class="dropdown-item" href="http://127.0.0.1:5500/cadastro.html">Cadastre-se</a>
-              <a class="dropdown-item" href="http://127.0.0.1:5500/login.html">Login</a>
-              <a class="dropdown-item" id="SAIR" onclick="updateLoggedOut()" href=""></a>
-            </div>
-          </li>
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <!-- <input class="form-control mr-sm-2" type="text" placeholder="Buscar..."> -->
@@ -81,18 +82,18 @@
       <div class="col-sm-6 quemSomos"
         style="border-radius: 10px; background-color: #71707044; padding-top: 20px; padding-bottom:20px;">
         <h2 style="text-align: center; ">Quem Somos</h2>
-        <p style="font-size:large;font-family: 'Courier New', Courier, monospace;">Somos alunos do primeiro período de
+
+
+        <p id="textQuemSomos" style="font-size:large;font-family: 'Courier New', Courier, monospace;">Somos alunos do
+          primeiro período de
           ciências da computação, na faculdade Puc Minas unidade coração
           eucarístico. Nos reunimos em um grupo de 6 pessoas e através do nosso trabalho interdisciplinar escolhemos o
           tema vazamento de dados, com o intuito de conscientizar sobre o vazamento de dados, além da importância de
           protegermos nossos dados.</p>
-
-        <p style="font-size:large;font-family: 'Courier New', Courier, monospace;">Para isso criamos um método educativo
-          baseado em videoaulas , cursos e quizes
-          abordando sobre temas como o que é LGPD , sobre controles técnicos para ter seus dados mais seguros. Todas
-          essas funcionalidades, inclusas em um site o qual contém as funcionalidades de portal de noticias sobre o
-          mundo da segurança e ranking de empresas que mais vazam dados.</p>
-        <button type="button" class="btn btn-info btn-sm" style="float:right; width: 50%;">Saiba mais</button>
+        <button type="button" class="btn btn-info btn-sm" id="buttonSaibaMais" onclick="showSaibaMais()"
+          style="float:right; width: 50%;">Saiba mais</button>
+        <button type="button" class="btn btn-info btn-sm" id="buttonVoltarSaibaMais" onclick="hiddenSaibaMais()"
+          style="float:right; width: 50%;">Voltar</button>
       </div>
       <div class="col-sm-1"></div>
       <div class="col-sm-5 adcConteudos">

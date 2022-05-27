@@ -67,13 +67,12 @@ let leisReais = {
 }
 
 updateClientesReais();
-
+document.getElementById("buttonVoltarSaibaMais").style.display = "none";
 if (localStorage.getItem("nome") && localStorage.getItem("nome") != "") {
     updateLoggedIn();
 } else {
     updateLoggedOut();
 }
-
 
 
 //  <button onclick="criaLei()" class="btn btn-primary" id="buttonCadastrar" style="width: 25%;">CADASTRA LEI</button> 
@@ -215,84 +214,17 @@ function updateLeisReais() {
 
 function updateLoggedIn() {
     if (window.location.href == "http://127.0.0.1:5500/main.html") {
-        document.getElementById("buttonVoltarSaibaMais").hidden = true;
         document.getElementById("LoggedMain").textContent = localStorage.getItem("nome");
         document.getElementById("Notícias").textContent = "Notícias";
         document.getElementById("Vídeos").textContent = "Vídeos";
         document.getElementById("Quizzes").textContent = "Quizzes";
-        document.getElementById("SAIRr").textContent = "SAIR";
+        document.getElementById("SAIR").textContent = "SAIR";
     } else if (window.location.href == "http://127.0.0.1:5500/cadastro.html") {
         document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
-        document.getElementById("SAIRr").textContent = "SAIR";
+        document.getElementById("SAIRR").textContent = "SAIR";
     } else if (window.location.href == "http://127.0.0.1:5500/login.html") {
         document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
         document.getElementById("SAIRr").textContent = "SAIR";
-    } else if (window.location.href == "http://127.0.0.1:5500/noticias.html") {
-        document.getElementById("nameLogged").innerHTML = localStorage.getItem("nome");
-        document.getElementById("Notícias").textContent = "Notícias";
-        document.getElementById("Vídeos").textContent = "Vídeos";
-        document.getElementById("Quizzes").textContent = "Quizzes";
-        document.getElementById("SAIRr").textContent = "SAIR";
-    }else if (window.location.href == "http://127.0.0.1:5500/Noticias.html") {
-        document.getElementById("nameLogged").innerHTML = localStorage.getItem("nome");
-        document.getElementById("Notícias").textContent = "Notícias";
-        document.getElementById("Vídeos").textContent = "Vídeos";
-        document.getElementById("Quizzes").textContent = "Quizzes";
-        document.getElementById("SAIRr").textContent = "SAIR";
-    } else if (window.location.href == "http://127.0.0.1:5500/videos.html") {
-        document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
-        document.getElementById("Notícias").textContent = "Notícias";
-        document.getElementById("Vídeos").textContent = "Vídeos";
-        document.getElementById("Quizzes").textContent = "Quizzes";
-        document.getElementById("SAIRr").textContent = "SAIR";
-    }
-}
-
-function updateLoggedOut() {
-    localStorage.setItem("nome", "");
-    if (window.location.href == "http://127.0.0.1:5500/main.html") {
-        document.getElementById("Menu").hidden = true;
-        document.getElementById("Notícias").hidden = true;
-        document.getElementById("Vídeos").hidden = true;
-        document.getElementById("Quizzes").hidden = true;
-        document.getElementById("Contato").hidden = true;
-        document.getElementById("LoggedMain").hidden = true;
-        document.getElementById("buttonVoltarSaibaMais").hidden = true;
-        document.getElementById("SAIRr").hidden = true;
-        window.location.href = "http://127.0.0.1:5500/login.html";
-    } else if (window.location.href == "http://127.0.0.1:5500/login.html") {
-        document.getElementById("nameLogged").hidden = true;
-        document.getElementById("SAIRr").hidden = true;
-    } else if (window.location.href == "http://127.0.0.1:5500/cadastro.html") {
-        document.getElementById("nameLogged").hidden = true;
-        document.getElementById("SAIRr").hidden = true;
-    } else if (window.location.href == "http://127.0.0.1:5500/videos.html") {
-        document.getElementById("Menu").hidden = true;
-        document.getElementById("Notícias").hidden = true;
-        document.getElementById("Vídeos").hidden = true;
-        document.getElementById("Quizzes").hidden = true;
-        document.getElementById("Contato").hidden = true;
-        document.getElementById("nameLogged").hidden = true;
-        document.getElementById("SAIRr").hidden = true;
-        window.location.href = "http://127.0.0.1:5500/login.html";
-    } else if (window.location.href == "http://127.0.0.1:5500/noticias.html") {
-        document.getElementById("Menu").hidden = true;
-        document.getElementById("Notícias").hidden = true;
-        document.getElementById("Vídeos").hidden = true;
-        document.getElementById("Quizzes").hidden = true;
-        document.getElementById("Contato").hidden = true;
-        document.getElementById("nameLogged").hidden = true;
-        document.getElementById("SAIRr").hidden = true;
-        window.location.href = "http://127.0.0.1:5500/login.html";
-    }else if (window.location.href == "http://127.0.0.1:5500/Noticias.html") {
-        document.getElementById("Menu").hidden = true;
-        document.getElementById("Notícias").hidden = true;
-        document.getElementById("Vídeos").hidden = true;
-        document.getElementById("Quizzes").hidden = true;
-        document.getElementById("Contato").hidden = true;
-        document.getElementById("nameLogged").hidden = true;
-        document.getElementById("SAIRr").hidden = true;
-        window.location.href = "http://127.0.0.1:5500/login.html";
     }
 }
 
@@ -303,6 +235,7 @@ function authenticate() {
     let password = document.getElementById("inputPassword").value;
     let logged = false;
     updateClientesReais();
+    console.log(clientesReais)
     if (clientesReais.cliente.length) {
         clientesReais.cliente.forEach(e => {
             if (e.login == login && e.senha == password || e.email == login && e.senha == password) {
@@ -340,14 +273,37 @@ function sendEmailRecuperarSenha() {
     });
 }
 
-function showSaibaMais() {
-    document.getElementById("textQuemSomos").innerHTML = "Somos alunos do primeiro período de ciências da computação, na faculdade Puc Minas unidade coração eucarístico. Nos reunimos em um grupo de 6 pessoas e através do nosso trabalho interdisciplinar escolhemos o tema vazamento de dados, com o intuito de conscientizar sobre o vazamento de dados, além da importância de protegermos nossos dados.Para isso criamos um método educativo baseado em videoaulas , cursos e quizes abordando sobre temas como o que é LGPD , sobre controles técnicos para ter seus dados mais seguros. Todas essas funcionalidades, inclusas em um site o qual contém as funcionalidades de portal de noticias sobre o mundo da segurança e ranking de empresas que mais vazam dados."
-    document.getElementById("buttonSaibaMais").hidden = true;
-    document.getElementById("buttonVoltarSaibaMais").hidden = false;
+function updateLoggedOut() {
+    localStorage.setItem("nome", "");
+    document.getElementById("Notícias").style.display = "none";
+    document.getElementById("Vídeos").style.display = "none";
+    document.getElementById("Quizzes").style.display = "none";
+    document.getElementById("Contato").style.display = "none";
+    if (window.location.href == "http://127.0.0.1:5500/main.html") {
+        document.getElementById("Menu").style.display = "none";
+        document.getElementById("LoggedMain").style.display = "none";
+        document.getElementById("SAIR").style.display = "none";
+    } else if (window.location.href == "http://127.0.0.1:5500/login.html") {
+        document.getElementById("nameLogged").style.display = "none";
+        document.getElementById("SAIRr").style.display = "none";
+    } else if (window.location.href == "http://127.0.0.1:5500/cadastro.html") {
+        document.getElementById("nameLogged").style.display = "none";
+        document.getElementById("SAIRR").style.display = "none";
+    }
+    setTimeout(()=>{
+        window.location.href = "http://127.0.0.1:5500/login.html";
+    },200);
 }
 
-function hiddenSaibaMais() {
+function showSaibaMais() {
     document.getElementById("textQuemSomos").innerHTML = "Somos alunos do primeiro período de ciências da computação, na faculdade Puc Minas unidade coração eucarístico. Nos reunimos em um grupo de 6 pessoas e através do nosso trabalho interdisciplinar escolhemos o tema vazamento de dados, com o intuito de conscientizar sobre o vazamento de dados, além da importância de protegermos nossos dados."
-    document.getElementById("buttonVoltarSaibaMais").hidden = true;
-    document.getElementById("buttonSaibaMais").hidden = false;
+    document.getElementById("textQuemSomos").innerHTML += "Para isso criamos um método educativo baseado em videoaulas , cursos e quizes abordando sobre temas como o que é LGPD , sobre controles técnicos para ter seus dados mais seguros. Todas essas funcionalidades, inclusas em um site o qual contém as funcionalidades de portal de noticias sobre o mundo da segurança e ranking de empresas que mais vazam dados."
+    document.getElementById("buttonSaibaMais").style.display = "none";
+    document.getElementById("buttonVoltarSaibaMais").style.display = "inline";
+}
+
+function hiddenSaibaMais(){ 
+    document.getElementById("textQuemSomos").innerHTML = "Somos alunos do primeiro período de ciências da computação, na faculdade Puc Minas unidade coração eucarístico. Nos reunimos em um grupo de 6 pessoas e através do nosso trabalho interdisciplinar escolhemos o tema vazamento de dados, com o intuito de conscientizar sobre o vazamento de dados, além da importância de protegermos nossos dados."
+    document.getElementById("buttonSaibaMais").style.display = "inline";
+    document.getElementById("buttonVoltarSaibaMais").style.display = "none";
 }
