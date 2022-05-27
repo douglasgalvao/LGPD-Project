@@ -67,17 +67,15 @@ let leisReais = {
 }
 
 updateClientesReais();
-document.getElementById("buttonVoltarSaibaMais").hidden = true;
+
 if (localStorage.getItem("nome") && localStorage.getItem("nome") != "") {
     updateLoggedIn();
+    document.getElementById("SAIR").hidden = true;
 } else {
     updateLoggedOut();
+    document.getElementById("SAIR").hidden = false;
 }
-document.getElementById("buttonVoltarSaibaMais").style="display = none;";
 
-
-//  <button onclick="criaLei()" class="btn btn-primary" id="buttonCadastrar" style="width: 25%;">CADASTRA LEI</button> 
-// updateLeisReais();
 
 
 function criaUsuario() {
@@ -213,38 +211,9 @@ function updateLeisReais() {
     }
 }
 
-function updateLoggedIn() {
-    if (window.location.href == "http://127.0.0.1:5500/main.html") {
-        document.getElementById("LoggedMain").textContent = localStorage.getItem("nome");
-        document.getElementById("Notícias").textContent = "Notícias";
-        document.getElementById("Vídeos").textContent = "Vídeos";
-        document.getElementById("Quizzes").textContent = "Quizzes";
-        document.getElementById("SAIR").textContent = "SAIR";
-    } else if (window.location.href == "http://127.0.0.1:5500/cadastro.html") {
-        document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
-        document.getElementById("SAIRR").textContent = "SAIR";
-    } else if (window.location.href == "http://127.0.0.1:5500/login.html") {
-        document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
-        document.getElementById("SAIRr").textContent = "SAIR";
-    } else if (window.location.href == "http://127.0.0.1:5500/noticias.html") {
-        document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
-        document.getElementById("Notícias").textContent = "Notícias";
-        document.getElementById("Vídeos").textContent = "Vídeos";
-        document.getElementById("Quizzes").textContent = "Quizzes";
-        document.getElementById("SAIRr").textContent = "SAIR";
-    }else if (window.location.href == "http://127.0.0.1:5500/videos.html") {
-        document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
-        document.getElementById("Notícias").textContent = "Notícias";
-        document.getElementById("Vídeos").textContent = "Vídeos";
-        document.getElementById("Quizzes").textContent = "Quizzes";
-        document.getElementById("SAIRr").textContent = "SAIR";
-    }
-}
-
 function authenticate() {
 
     let login = document.getElementById("staticEmail").value;
-    let email = document.getElementById("staticEmail").value;
     let password = document.getElementById("inputPassword").value;
     let logged = false;
     updateClientesReais();
@@ -258,7 +227,6 @@ function authenticate() {
                 localStorage.setItem("id", e.id + "")
                 window.location.href = "http://127.0.0.1:5500/main.html";
                 document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
-                return;
             }
         });
     }
@@ -270,6 +238,7 @@ function authenticate() {
             document.getElementById("inputPasswordErr").style = "color:none;padding-top:0px";
         }, 1500);
     }
+    return logged;
 }
 
 function sendEmailRecuperarSenha() {
@@ -286,26 +255,85 @@ function sendEmailRecuperarSenha() {
     });
 }
 
+function updateLoggedIn() {
+    if (window.location.href == "http://127.0.0.1:5500/main.html") {
+        document.getElementById("buttonVoltarSaibaMais").hidden = true;
+        document.getElementById("LoggedMain").textContent = localStorage.getItem("nome");
+        document.getElementById("Notícias").textContent = "Notícias";
+        document.getElementById("Vídeos").textContent = "Vídeos";
+        document.getElementById("Quizzes").textContent = "Quizzes";
+        document.getElementById("SAIR").textContent = "SAIR";
+        document.getElementById("ButtonLogin").hidden=true;
+        document.getElementById("ButtonCadastro").hidden=true;
+    } else if (window.location.href == "http://127.0.0.1:5500/cadastro.html") {
+        document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
+        document.getElementById("SAIR").textContent = "SAIR";
+        document.getElementById("ButtonCadastro").hidden = true;
+        document.getElementById("ButtonLogin").hidden = false;
+    } else if (window.location.href == "http://127.0.0.1:5500/login.html") {
+        document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
+        document.getElementById("SAIR").textContent = "SAIR";
+        document.getElementById("ButtonCadastro").hidden = false;
+        document.getElementById("ButtonLogin").hidden = true;
+    } else if (window.location.href == "http://127.0.0.1:5500/noticias.html") {
+        document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
+        document.getElementById("Notícias").textContent = "Notícias";
+        document.getElementById("Vídeos").textContent = "Vídeos";
+        document.getElementById("Quizzes").textContent = "Quizzes";
+        document.getElementById("SAIR").textContent = "SAIR";
+    } else if (window.location.href == "http://127.0.0.1:5500/videos.html") {
+        document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
+        document.getElementById("Notícias").textContent = "Notícias";
+        document.getElementById("Vídeos").textContent = "Vídeos";
+        document.getElementById("Quizzes").textContent = "Quizzes";
+        document.getElementById("SAIR").textContent = "SAIR";
+    }
+}
+
 function updateLoggedOut() {
     localStorage.setItem("nome", "");
-    document.getElementById("Notícias").style.display = "none";
-    document.getElementById("Vídeos").style.display = "none";
-    document.getElementById("Quizzes").style.display = "none";
-    document.getElementById("Contato").style.display = "none";
     if (window.location.href == "http://127.0.0.1:5500/main.html") {
-        document.getElementById("Menu").style.display = "none";
-        document.getElementById("LoggedMain").style.display = "none";
-        document.getElementById("SAIR").style.display = "none";
-    } else if (window.location.href == "http://127.0.0.1:5500/login.html") {
-        document.getElementById("nameLogged").style.display = "none";
-        document.getElementById("SAIRr").style.display = "none";
+        document.getElementById("Menu").hidden = true;
+        document.getElementById("LoggedMain").hidden = true;
+        document.getElementById("Notícias").hidden = true;
+        document.getElementById("Vídeos").hidden = true;
+        document.getElementById("Quizzes").hidden = true;
+        document.getElementById("Contato").hidden = true;
+        document.getElementById("SAIR").hidden = true;
+        setTimeout(() => {
+            window.location.href = "http://127.0.0.1:5500/login.html";
+        }, 200);
+    } else if (window.location.href == "http://127.0.0.1:5500/noticias.html") {
+        document.getElementById("Menu").hidden = true;
+        document.getElementById("LoggedMain").hidden = true;
+        document.getElementById("Notícias").hidden = true;
+        document.getElementById("Vídeos").hidden = true;
+        document.getElementById("Quizzes").hidden = true;
+        document.getElementById("Contato").hidden = true;
+        document.getElementById("SAIR").hidden = true;
+        setTimeout(() => {
+            window.location.href = "http://127.0.0.1:5500/login.html";
+        }, 200);
+    } else if (window.location.href == "http://127.0.0.1:5500/videos.html") {
+        document.getElementById("Menu").hidden = true;
+        document.getElementById("LoggedMain").hidden = true;
+        document.getElementById("Notícias").hidden = true;
+        document.getElementById("Vídeos").hidden = true;
+        document.getElementById("Quizzes").hidden = true;
+        document.getElementById("Contato").hidden = true;
+        document.getElementById("SAIR").hidden = true;
+        setTimeout(() => {
+            window.location.href = "http://127.0.0.1:5500/login.html";
+        }, 200);
     } else if (window.location.href == "http://127.0.0.1:5500/cadastro.html") {
-        document.getElementById("nameLogged").style.display = "none";
-        document.getElementById("SAIRR").style.display = "none";
+        document.getElementById("nameLogged").hidden = true;
+        document.getElementById("SAIR").hidden = true;
+    } else if (window.location.href == "http://127.0.0.1:5500/login.html") {
+        document.getElementById("nameLogged").hidden = true;
+        document.getElementById("SAIR").hidden = true;
     }
-    setTimeout(()=>{
-        window.location.href = "http://127.0.0.1:5500/login.html";
-    },200);
+
+
 }
 
 function showSaibaMais() {
@@ -315,7 +343,7 @@ function showSaibaMais() {
     document.getElementById("buttonVoltarSaibaMais").hidden = false;
 }
 
-function hiddenSaibaMais(){ 
+function hiddenSaibaMais() {
     document.getElementById("textQuemSomos").innerHTML = "Somos alunos do primeiro período de ciências da computação, na faculdade Puc Minas unidade coração eucarístico. Nos reunimos em um grupo de 6 pessoas e através do nosso trabalho interdisciplinar escolhemos o tema vazamento de dados, com o intuito de conscientizar sobre o vazamento de dados, além da importância de protegermos nossos dados."
     document.getElementById("buttonSaibaMais").hidden = false;
     document.getElementById("buttonVoltarSaibaMais").hidden = true;
