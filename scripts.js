@@ -270,8 +270,8 @@ function updateLoggedIn() {
         document.getElementById("ButtonLogin").hidden = false;
     } else if (window.location.href == "https://lgpdpuc.github.io/login.html") {
         document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
-        document.getElementById("SAIR").textContent = "SAIR";
-        document.getElementById("ButtonCadastro").hidden = false;
+        document.getElementById("SAIR").hidden = false;
+        document.getElementById("ButtonCadastro").hidden = true;
         document.getElementById("ButtonLogin").hidden = true;
     } else if (window.location.href == "https://lgpdpuc.github.io/noticias.html") {
         document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
