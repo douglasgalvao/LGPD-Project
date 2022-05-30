@@ -1,4 +1,4 @@
-**let clientesExample = {
+let clientesExample = {
     "clientes": [{
         "nome": "Matheus",
         "email": "araujoCabulozo@gmail.com",
@@ -156,7 +156,7 @@ function criaUsuario() {
                 document.getElementById('dataDeNascimentoInput').value = "";
                 setTimeout(() => {
                     alert("Usuário cadastrado em nosso site!");
-                    window.location.href = "https://LGPDpuc.github.io/login.html"
+                    window.location.href = "https://lgpdpuc.github.io/login.html"
                 }, 1200);
                 updateClientesReais();
             }, 200);
@@ -180,7 +180,7 @@ function criaLei() {
         document.getElementById('loginInput').value = "";
         document.getElementById('dataDeNascimentoInput').value = "";
         setTimeout(() => {
-            window.location.href = "https://LGPDpuc.github.io/html.html"
+            window.location.href = "https://lgpdpuc.github.io/html.html"
         }, 2000);
         updateLeisReais();
     }
@@ -223,7 +223,7 @@ function authenticate() {
                 logged = true;
                 localStorage.setItem("nome", e.nome);
                 localStorage.setItem("id", e.id + "")
-                window.location.href = "https://LGPDpuc.github.io/main.html";
+                window.location.href = "https://lgpdpuc.github.io/main.html";
                 document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
             }
         });
@@ -254,7 +254,7 @@ function sendEmailRecuperarSenha() {
 }
 
 function updateLoggedIn() {
-    if (window.location.href == "https://LGPDpuc.github.io/main.html") {
+    if (window.location.href == "https://lgpdpuc.github.io/main.html") {
         document.getElementById("LoggedMain").textContent = localStorage.getItem("nome");
         document.getElementById("Notícias").textContent = "Notícias";
         document.getElementById("Vídeos").textContent = "Vídeos";
@@ -263,17 +263,17 @@ function updateLoggedIn() {
         document.getElementById("ButtonLogin").hidden = true;
         document.getElementById("ButtonCadastro").hidden = true;
         document.getElementById("buttonVoltarSaibaMais").hidden = true;
-    } else if (window.location.href == "https://LGPDpuc.github.io/cadastro.html") {
+    } else if (window.location.href == "https://lgpdpuc.github.io/cadastro.html") {
         document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
         document.getElementById("SAIR").textContent = "SAIR";
         document.getElementById("ButtonCadastro").hidden = true;
         document.getElementById("ButtonLogin").hidden = false;
-    } else if (window.location.href == "https://LGPDpuc.github.io/login.html") {
+    } else if (window.location.href == "https://lgpdpuc.github.io/login.html") {
         document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
         document.getElementById("SAIR").textContent = "SAIR";
         document.getElementById("ButtonCadastro").hidden = false;
         document.getElementById("ButtonLogin").hidden = true;
-    } else if (window.location.href == "https://LGPDpuc.github.io/noticias.html") {
+    } else if (window.location.href == "https://lgpdpuc.github.io/noticias.html") {
         document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
         document.getElementById("Notícias").textContent = "Notícias";
         document.getElementById("Vídeos").textContent = "Vídeos";
@@ -281,7 +281,7 @@ function updateLoggedIn() {
         document.getElementById("SAIR").hidden = false;
         document.getElementById("ButtonLogin").hidden = true;
         document.getElementById("ButtonCadastro").hidden = true;
-    } else if (window.location.href == "https://LGPDpuc.github.io/videos.html") {
+    } else if (window.location.href == "https://lgpdpuc.github.io/videos.html") {
         document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
         document.getElementById("Notícias").textContent = "Notícias";
         document.getElementById("Vídeos").textContent = "Vídeos";
@@ -295,7 +295,7 @@ function updateLoggedIn() {
 
 function updateLoggedOut() {
     localStorage.setItem("nome", "");
-    if (window.location.href == "https://LGPDpuc.github.io/main.html") {
+    if (window.location.href == "https://lgpdpuc.github.io/main.html") {
         document.getElementById("buttonVoltarSaibaMais").hidden = true;
         document.getElementById("Menu").hidden = true;
         document.getElementById("LoggedMain").hidden = true;
@@ -305,9 +305,9 @@ function updateLoggedOut() {
         document.getElementById("Contato").hidden = true;
         document.getElementById("SAIR").hidden = true;
         setTimeout(() => {
-            window.location.href = "https://LGPDpuc.github.io/login.html";
+            window.location.href = "https://lgpdpuc.github.io/login.html";
         }, 200);
-    } else if (window.location.href == "https://LGPDpuc.github.io/noticias.html") {
+    } else if (window.location.href == "https://lgpdpuc.github.io/noticias.html") {
         document.getElementById("Menu").hidden = true;
         document.getElementById("nameLogged").hidden = true;
         document.getElementById("Notícias").hidden = true;
@@ -316,9 +316,9 @@ function updateLoggedOut() {
         document.getElementById("Contato").hidden = true;
         document.getElementById("SAIR").hidden = true;
         setTimeout(() => {
-            window.location.href = "https://LGPDpuc.github.io/login.html";
+            window.location.href = "https://lgpdpuc.github.io/login.html";
         }, 200);
-    } else if (window.location.href == "https://LGPDpuc.github.io/videos.html") {
+    } else if (window.location.href == "https://lgpdpuc.github.io/videos.html") {
         document.getElementById("Menu").hidden = true;
         document.getElementById("LoggedMain").hidden = true;
         document.getElementById("Notícias").hidden = true;
@@ -327,12 +327,12 @@ function updateLoggedOut() {
         document.getElementById("Contato").hidden = true;
         document.getElementById("SAIR").hidden = true;
         setTimeout(() => {
-            window.location.href = "https://LGPDpuc.github.io/login.html";
+            window.location.href = "https://lgpdpuc.github.io/login.html";
         }, 200);
-    } else if (window.location.href == "https://LGPDpuc.github.io/cadastro.html") {
+    } else if (window.location.href == "https://lgpdpuc.github.io/cadastro.html") {
         document.getElementById("nameLogged").hidden = true;
         document.getElementById("SAIR").hidden = true;
-    } else if (window.location.href == "https://LGPDpuc.github.io/login.html") {
+    } else if (window.location.href == "https://lgpdpuc.github.io/login.html") {
         document.getElementById("nameLogged").hidden = true;
         document.getElementById("SAIR").hidden = true;
     }
