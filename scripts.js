@@ -68,12 +68,10 @@ let leisReais = {
 
 updateClientesReais();
 
-if ( localStorage.getItem("nome") && localStorage.getItem("nome").length > 0 ) {
+if (localStorage.getItem("nome") && localStorage.getItem("nome").length > 0) {
     updateLoggedIn();
-    document.getElementById("SAIR").hidden = true;
 } else {
     updateLoggedOut();
-    document.getElementById("SAIR").hidden = false;
 }
 
 
@@ -261,10 +259,9 @@ function updateLoggedIn() {
         document.getElementById("Notícias").textContent = "Notícias";
         document.getElementById("Vídeos").textContent = "Vídeos";
         document.getElementById("Quizzes").textContent = "Quizzes";
-        document.getElementById("SAIR").textContent = "SAIR";
         document.getElementById("SAIR").hidden = false;
-        document.getElementById("ButtonLogin").hidden=true;
-        document.getElementById("ButtonCadastro").hidden=true;
+        document.getElementById("ButtonLogin").hidden = true;
+        document.getElementById("ButtonCadastro").hidden = true;
         document.getElementById("buttonVoltarSaibaMais").hidden = true;
     } else if (window.location.href == "https://LGPDpuc.github.io/cadastro.html") {
         document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
@@ -281,16 +278,18 @@ function updateLoggedIn() {
         document.getElementById("Notícias").textContent = "Notícias";
         document.getElementById("Vídeos").textContent = "Vídeos";
         document.getElementById("Quizzes").textContent = "Quizzes";
-        document.getElementById("SAIR").textContent = "SAIR";
+        document.getElementById("SAIR").hidden = false;
+        document.getElementById("ButtonLogin").hidden = true;
+        document.getElementById("ButtonCadastro").hidden = true;
     } else if (window.location.href == "https://LGPDpuc.github.io/videos.html") {
         document.getElementById("nameLogged").textContent = localStorage.getItem("nome");
         document.getElementById("Notícias").textContent = "Notícias";
         document.getElementById("Vídeos").textContent = "Vídeos";
         document.getElementById("Quizzes").textContent = "Quizzes";
         document.getElementById("SAIR").hidden = false;
-        document.getElementById("ButtonLogin").hidden=true;
-        document.getElementById("ButtonCadastro").hidden=true;
-        
+        document.getElementById("ButtonLogin").hidden = true;
+        document.getElementById("ButtonCadastro").hidden = true;
+
     }
 }
 
@@ -310,7 +309,7 @@ function updateLoggedOut() {
         }, 200);
     } else if (window.location.href == "https://LGPDpuc.github.io/noticias.html") {
         document.getElementById("Menu").hidden = true;
-        document.getElementById("LoggedMain").hidden = true;
+        document.getElementById("nameLogged").hidden = true;
         document.getElementById("Notícias").hidden = true;
         document.getElementById("Vídeos").hidden = true;
         document.getElementById("Quizzes").hidden = true;
