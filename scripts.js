@@ -297,6 +297,7 @@ function updateLoggedIn() {
 function updateLoggedOut() {
     localStorage.setItem("nome", "");
     if (window.location.href == "http://LGPDpuc.github.io/main.html") {
+        document.getElementById("buttonVoltarSaibaMais").hidden = true;
         document.getElementById("Menu").hidden = true;
         document.getElementById("LoggedMain").hidden = true;
         document.getElementById("Notícias").hidden = true;
