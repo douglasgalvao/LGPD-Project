@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <title> LGPD-TIAW </title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <!-- Bootstrap CSS -->
+  <!-- xs= 0-767 pixels    sm = 768-991 pixels   md = 992-1199 pixels  lg = 1200 pixels and up -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #C4C4C4;">
+  <nav class="navbar navbar-expand-lg static-top navbar-dark" style="background-color: #677385;">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="vazei.png" alt="..." height="36">
+      </a>
+
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Usuário</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <a class="dropdown-item" id="ButtonCadastro"
+                href="https://lgpdpuc.github.io/cadastro.html">Cadastre-se</a>
+              <a class="dropdown-item" id="ButtonLogin" href="https://lgpdpuc.github.io/login.html">Login</a>
+              <a class="dropdown-item" id="SAIR" onclick="updateLoggedOut()" href="">SAIR</a>
+            </div>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" id="Menu" href="https://lgpdpuc.github.io/main.html">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="Notícias" href="https://lgpdpuc.github.io/noticias.html">Notícias</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" id="Vídeos" href="https://lgpdpuc.github.io/videos.html">Vídeos<span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="Quizzes" href="#">Quizzes</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" id="Contato" href="#">Contato</a>
+          </li>
+          <li>
+            <form class="form-inline my-2 my-lg-0">
+              <!-- <input class="form-control mr-sm-2" type="text" placeholder="Buscar..."> -->
+
+              <p id="LoggedMain" style="color:white; padding-left: 1px;"></p>
+              <p id="idLogged" style="color:white; padding-left: 1px;"></p>
+
+              <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <img
+                  src="https://cdn-icons-png.flaticon.com/512/702/702988.png" alt="..." height="20"></button> -->
+            </form>
+
+          </li>
+        </ul>
+        <div style="float:right;">
+          <p id="nameLogged" style="color:white; padding-left: 1px;margin-top:8%"></p>
+        </div>
+
+      </div>
+  </nav>
+
+
+  <div class="container">
+    <h1 class="contact" style="margin-top: 30px; text-align: center;" >Contato</h1>
+    <div class="row" style="margin-top:30px; align-items: center; text-align: center;">
+      <div class="col-md-6  col-lg-4">
+        <img src="images/rodrigo.jpeg" width="150px" heigth="150" alt="" style="border-radius:30%; margin-bottom: 10px;">
+        <h5>Rodrigo Carvalho</h5>
+        <h5>rodrigoPoucopapo@gmail.com</h5>
+        <h5>(31) 99112-6326 </h5>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <img src="images/douglas.jpeg" width="150px" heigth="150" alt="" style="border-radius:30%; margin-bottom: 10px;">
+        <h5>Douglas Galvão</h5>
+        <h5>douglas-mad@live.com</h5>
+        <h5>(31) 99259-9109 </h5>
+      </div>
+      <div class="col-md-12  col-lg-4">
+        <img src="images/guilherme.jpeg" width="150px" heigth="150" alt="" style="border-radius:30%; margin-bottom: 10px;">
+        <h5>Guilherme Vieira</h5>
+        <h5>glk157moip@gmail.com</h5>
+        <h5>(31) 99469-1715 </h5>
+        
+      </div>
+
+    </div>
+    <div class="row" style="margin-top:60px;align-items: center; text-align: center;">
+      <div class="col-md-6 col-lg-3">
+        <img src="images/henrique.jpeg" width="150px" heigth="150" alt="" style="border-radius:30%; margin-bottom: 10px;">
+        <h5>Henrique Augusto</h5>
+        <h5>yasuonegroso@gmail.com</h5>
+        <h5>(31) 99560-6464 </h5>
+      </div>    
+      <div class="col-md-6 col-lg-3">
+        <img src="images/lucas.jpeg" width="150px" heigth="150" alt="" style="border-radius:30%; margin-bottom: 10px;">
+        <h5>Lucas Carvalho</h5>
+        <h5>dividinhap2@gmail.com</h5>
+        <h5>(31) 97184-3939 </h5>
+      </div>
+      
+      <div class="col-md-6 col-lg-3">
+        <img src="images/bruno.jpeg" width="150px" heigth="150" alt="" style="border-radius:30%; margin-bottom: 10px;; margin-bottom: 10px;">
+        <h5>Bruno Bellezzia</h5>
+        <h5>elmaloca22@gmail.com</h5>
+        <h5>(31) 99259-9109 </h5>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <img src="images/teo.jpeg" width="150px" heigth="150" alt="" style="border-radius:30%; margin-bottom: 10px;; margin-bottom: 10px;">
+        <h5>Pedro Teodoro</h5>
+        <h5>téogarcia@gmail.com</h5>
+        <h5>(31) 99259-9109 </h5>
+      </div>
+    </div>
+    <div class="row"></div>
+  </div>
+
+
+
+
+  <!-- Optional JavaScript -->
+  <script src="https://lgpdpuc.github.io/scripts.js"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

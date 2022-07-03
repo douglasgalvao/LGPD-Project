@@ -254,7 +254,7 @@ function sendEmailRecuperarSenha() {
 }
 
 function updateLoggedIn() {
-    if (window.location.href == "https://lgpdpuc.github.io/main.html") {
+    if (window.location.href == "https://lgpdpuc.github.io/main.html" ) {
         document.getElementById("LoggedMain").textContent = localStorage.getItem("nome");
         document.getElementById("Notícias").textContent = "Notícias";
         document.getElementById("Vídeos").textContent = "Vídeos";
@@ -295,7 +295,7 @@ function updateLoggedIn() {
 
 function updateLoggedOut() {
     localStorage.setItem("nome", "");
-    if (window.location.href == "https://lgpdpuc.github.io/main.html") {
+    if (window.location.href == "https://lgpdpuc.github.io/main.html" ) {
         document.getElementById("buttonVoltarSaibaMais").hidden = true;
         document.getElementById("Menu").hidden = true;
         document.getElementById("LoggedMain").hidden = true;

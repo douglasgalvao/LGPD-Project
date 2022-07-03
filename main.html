@@ -6,8 +6,9 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Bootstrap CSS -->
   <!-- xs= 0-767 pixels    sm = 768-991 pixels   md = 992-1199 pixels  lg = 1200 pixels and up -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -37,7 +38,7 @@
             </div>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" id="Menu" href="https://lgpdpuc.github.io/main.html">Menu<span
+            <a class="nav-link" id="Menu" href="https://lgpdpuc.github.io/main.html">Principal<span
                 class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
@@ -50,7 +51,7 @@
             <a class="nav-link" id="Quizzes" href="#">Quizzes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="Contato" href="#">Contato</a>
+            <a class="nav-link" id="Contato" href="https://lgpdpuc.github.io/contato.html">Contato</a>
           </li>
 
         </ul>
@@ -69,7 +70,7 @@
     <div class="row">
       <div class="col-12">
         <h1 style="margin-top:50px;margin-bottom:50px">
-          <b>Segurança e vazamento de Dados</b>
+          <b>Segurança e Vazamento de Dados</b>
         </h1>
       </div>
     </div>
@@ -86,14 +87,16 @@
 
         <p id="textQuemSomos" style="font-size:large;font-family: 'Courier New', Courier, monospace;">Somos alunos do
           primeiro período de
-          ciências da computação, na faculdade Puc Minas unidade coração
-          eucarístico. Nos reunimos em um grupo de 6 pessoas e através do nosso trabalho interdisciplinar escolhemos o
+          Ciência da Computação, na Faculdade Puc Minas unidade Coração
+          Eucarístico. Nos reunimos em um grupo de 6 pessoas e por meio do nosso trabalho interdisciplinar escolhemos o
           tema vazamento de dados, com o intuito de conscientizar sobre o vazamento de dados, além da importância de
           protegermos nossos dados.</p>
+          
         <button type="button" class="btn btn-info btn-sm" id="buttonSaibaMais" onclick="showSaibaMais()"
-          style="float:right; width: 50%;">Saiba mais</button>
+          style="float:left; width: 48%;">Saiba mais</button>
+
         <button type="button" class="btn btn-info btn-sm" id="buttonVoltarSaibaMais" onclick="hiddenSaibaMais()"
-          style="float:right; width: 50%;">Voltar</button>
+          style="float:right; width: 48%;">Voltar</button>
       </div>
       <div class="col-sm-1"></div>
       <div class="col-sm-5 adcConteudos">
@@ -105,29 +108,29 @@
         </div>
         <div class="recomendacao" style="margin-top: 20px;text-align: center;">
           <h4>Recomendações</h4>
-          <a href="https://www.youtube.com/"><img src="experiencia_1.png" alt="" class="img-fluid rounded float-end"
+          <a href="https://lgpdpuc.github.io/videos.html"><img src="experiencia_1.png" alt="" class="img-fluid rounded float-end"
               width="85%"></a>
         </div>
-        <div class="redes"
-          style="border-radius: 10px; margin-top: 20px; background-color:rgba(65, 63, 63, 0.847);padding-bottom: 10px;">
+        <div class="redes" style="border-radius: 10px; margin-top: 20px; background-color:rgba(65, 63, 63, 0.847);padding-bottom: 10px; text-align: center;">
           <div style="border-radius: 10px; margin-top: 10px; background-color:rgba(249, 243, 243, 0.219);">
             <h4 style="text-align: center;color:rgb(228, 228, 228)">Redes sociais</h4>
           </div>
           <a href="https://www.facebook.com">
-            <svg xmlns="https://www.w3.org/2000/svg" width="100" height="35" fill="currentColor" class="bi bi-facebook"
-              viewBox="0 0 16 16">
-              <path
-                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-            </svg>
+            <i class="fa fa-facebook-square" style="font-size:46px;padding-left: 10px;"></i>
           </a>
 
-          <a href="https://www.discord.com">
-            <svg xmlns="https://www.w3.org/2000/svg" width="100" height="45" fill="currentColor" class="bi bi-discord"
-              viewBox="0 0 16 16">
-              <path
-                d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
-            </svg>
+          <a href="https://www.instagram.com">
+            <i class="fa fa-instagram" style="font-size:46px;padding-left: 10px;"></i>
           </a>
+
+          <a href="https://www.discord.com/">
+            <i class='fab fa-discord' style='font-size:46px; padding-left: 10px;'></i>
+          </a>
+
+          <a href="https://www.linkedin.com">
+            <i class="fa fa-linkedin-square" style="font-size:46px;padding-left: 10px;"></i>
+          </a>
+          
 
         </div>
 
@@ -142,6 +145,7 @@
 
   <!-- Optional JavaScript -->
   <script src="https://lgpdpuc.github.io/scripts.js"></script>
+<!-- casos de test-->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
