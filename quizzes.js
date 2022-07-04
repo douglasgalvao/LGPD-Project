@@ -63,10 +63,10 @@ function iniciaQuiz2(n) {
     // console.log(pergunta);
     document.getElementById("quizDOIS").innerHTML = `
         <p style="margin-top:20px;margin-bottom: 35px;">${quizSobreCriptografia[perguntaNumber].pergunta}</p>
-        <label class="col-12 chk" for="b0"><input type="checkbox" onclick="selectOnlyThis('b0')" value="${quizSobreCriptografia[perguntaNumber].resposta[0]}" id="b0"> ${quizSobreCriptografia[perguntaNumber].resposta[0]}</label>
-        <label class="col-12 chk" for="b1"><input type="checkbox" onclick="selectOnlyThis('b1')" value="${quizSobreCriptografia[perguntaNumber].resposta[1]}" id="b1"> ${quizSobreCriptografia[perguntaNumber].resposta[1]}</label>
-        <label class="col-12 chk" for="b2"><input type="checkbox" onclick="selectOnlyThis('b2')" value="${quizSobreCriptografia[perguntaNumber].resposta[2]}" id="b2"> ${quizSobreCriptografia[perguntaNumber].resposta[2]}</label>
-        <label class="col-12 chk" for="b3"><input type="checkbox" onclick="selectOnlyThis('b3')" value="${quizSobreCriptografia[perguntaNumber].resposta[3]}" id="b3"> ${quizSobreCriptografia[perguntaNumber].resposta[3]}</label>
+        <label class="col-12 chk" for="b0"><input type="checkbox" onclick="selectOnlyThisB('b0')" value="${quizSobreCriptografia[perguntaNumber].resposta[0]}" id="b0"> ${quizSobreCriptografia[perguntaNumber].resposta[0]}</label>
+        <label class="col-12 chk" for="b1"><input type="checkbox" onclick="selectOnlyThisB('b1')" value="${quizSobreCriptografia[perguntaNumber].resposta[1]}" id="b1"> ${quizSobreCriptografia[perguntaNumber].resposta[1]}</label>
+        <label class="col-12 chk" for="b2"><input type="checkbox" onclick="selectOnlyThisB('b2')" value="${quizSobreCriptografia[perguntaNumber].resposta[2]}" id="b2"> ${quizSobreCriptografia[perguntaNumber].resposta[2]}</label>
+        <label class="col-12 chk" for="b3"><input type="checkbox" onclick="selectOnlyThisB('b3')" value="${quizSobreCriptografia[perguntaNumber].resposta[3]}" id="b3"> ${quizSobreCriptografia[perguntaNumber].resposta[3]}</label>
         <button class="btn btn-primary" onclick="validarRespostaQuiz2(${perguntaNumber})" style="float:right;margin-right: 20px;margin-bottom: 30px;">Proximo</button>`;
 }
 
@@ -74,6 +74,13 @@ function iniciaQuiz2(n) {
 function selectOnlyThis(id) {
     for (var i = 0; i < 4; i++) {
         document.getElementById("a" + i).checked = false;
+    }
+    document.getElementById(id).checked = true;
+}
+
+function selectOnlyThisB(id) {
+    for (var i = 0; i < 4; i++) {
+        document.getElementById("b" + i).checked = false;
     }
     document.getElementById(id).checked = true;
 }
