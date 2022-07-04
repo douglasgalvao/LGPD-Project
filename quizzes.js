@@ -145,7 +145,7 @@ function validarRespostaQuiz2(n) {
             quizSobreCriptografia.splice(n, 1);
             console.log(quizSobreCriptografia.length)
             if (quizSobreCriptografia.length > 0) {
-                iniciaQuiz1(returnRandom(quizSobreCriptografia.length));
+                iniciaQuiz2(returnRandom(quizSobreCriptografia.length));
             } else {
                 window.alert("Voce acertou " + acertos);
                 window.location.href = "https://lgpdpuc.github.io/contato.html"
