@@ -136,10 +136,10 @@ function validarRespostaQuiz2(n) {
 
     for (var i = 0; i < 4; i++) {
         if (document.getElementById("b" + i).checked) {
-            if (document.getElementById("b" + i).value == quiz1resp1 ||
-                document.getElementById("b" + i).value == quiz1resp2 ||
-                document.getElementById("b" + i).value == quiz1resp3 ||
-                document.getElementById("b" + i).value == quiz1resp4) {
+            if (document.getElementById("b" + i).value == quiz2resp1 ||
+                document.getElementById("b" + i).value == quiz2resp2 ||
+                document.getElementById("b" + i).value == quiz2resp3 ||
+                document.getElementById("b" + i).value == quiz2resp4) {
                 acertos++;
             }
             quizSobreCriptografia.splice(n, 1);
