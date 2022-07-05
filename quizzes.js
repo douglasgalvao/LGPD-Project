@@ -50,10 +50,10 @@ function iniciaQuiz1(n) {
     // console.log(pergunta);
     document.getElementById("quizUM").innerHTML = `
         <p style="margin-top:20px;margin-bottom: 35px;">${quizSobreLgpd[perguntaNumber].pergunta}</p>
-        <label class="col-12 chk" for="a1"><input type="checkbox" onclick="selectOnlyThis('a0')" value="${quizSobreLgpd[perguntaNumber].resposta[0]}" id="a0"> ${quizSobreLgpd[perguntaNumber].resposta[0]}</label>
-        <label class="col-12 chk" for="a2"><input type="checkbox" onclick="selectOnlyThis('a1')" value="${quizSobreLgpd[perguntaNumber].resposta[1]}" id="a1"> ${quizSobreLgpd[perguntaNumber].resposta[1]}</label>
-        <label class="col-12 chk" for="a3"><input type="checkbox" onclick="selectOnlyThis('a2')" value="${quizSobreLgpd[perguntaNumber].resposta[2]}" id="a2"> ${quizSobreLgpd[perguntaNumber].resposta[2]}</label>
-        <label class="col-12 chk" for="a4"><input type="checkbox" onclick="selectOnlyThis('a3')" value="${quizSobreLgpd[perguntaNumber].resposta[3]}" id="a3"> ${quizSobreLgpd[perguntaNumber].resposta[3]}</label>
+        <label class="col-12 chk" for="a0"><input type="checkbox" onclick="selectOnlyThis('a0')" value="${quizSobreLgpd[perguntaNumber].resposta[0]}" id="a0"> ${quizSobreLgpd[perguntaNumber].resposta[0]}</label>
+        <label class="col-12 chk" for="a1"><input type="checkbox" onclick="selectOnlyThis('a1')" value="${quizSobreLgpd[perguntaNumber].resposta[1]}" id="a1"> ${quizSobreLgpd[perguntaNumber].resposta[1]}</label>
+        <label class="col-12 chk" for="a2"><input type="checkbox" onclick="selectOnlyThis('a2')" value="${quizSobreLgpd[perguntaNumber].resposta[2]}" id="a2"> ${quizSobreLgpd[perguntaNumber].resposta[2]}</label>
+        <label class="col-12 chk" for="a3"><input type="checkbox" onclick="selectOnlyThis('a3')" value="${quizSobreLgpd[perguntaNumber].resposta[3]}" id="a3"> ${quizSobreLgpd[perguntaNumber].resposta[3]}</label>
         <button class="btn btn-primary" onclick="validarRespostaQuiz1(${perguntaNumber})" style="float:right;margin-right: 20px;margin-bottom: 30px;">Proximo</button>`;
 }
 

@@ -335,7 +335,30 @@ function updateLoggedOut() {
     } else if (window.location.href == "https://lgpdpuc.github.io/login.html") {
         document.getElementById("nameLogged").hidden = true;
         document.getElementById("SAIR").hidden = true;
+    }else if (window.location.href == "https://lgpdpuc.github.io/contato.html") {
+        document.getElementById("Menu").hidden = true;
+        document.getElementById("nameLogged").hidden = true;
+        document.getElementById("Notícias").hidden = true;
+        document.getElementById("Vídeos").hidden = true;
+        document.getElementById("Quizzes").hidden = true;
+        document.getElementById("Contato").hidden = true;
+        document.getElementById("SAIR").hidden = true;
+        setTimeout(() => {
+            window.location.href = "https://lgpdpuc.github.io/login.html";
+        }, 200);
+    }else if (window.location.href == "https://lgpdpuc.github.io/quizzes.html") {
+        document.getElementById("Menu").hidden = true;
+        document.getElementById("nameLogged").hidden = true;
+        document.getElementById("Notícias").hidden = true;
+        document.getElementById("Vídeos").hidden = true;
+        document.getElementById("Quizzes").hidden = true;
+        document.getElementById("Contato").hidden = true;
+        document.getElementById("SAIR").hidden = true;
+        setTimeout(() => {
+            window.location.href = "https://lgpdpuc.github.io/login.html";
+        }, 200);
     }
+    
 
 
 }
